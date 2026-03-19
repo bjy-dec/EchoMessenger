@@ -4,77 +4,78 @@
     {
         private System.ComponentModel.IContainer components = null;
 
-        private Button button1;
-        private Label label1;
-        private ListBox listBox1;
-        private TextBox textBox1;
+        private Button buttonSend;
+        private Label labelTitle;
+        private ListBox listBoxMessages;
+        private TextBox textBoxInput;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
-            listBox1 = new ListBox();
-            textBox1 = new TextBox();
+            buttonSend = new Button();
+            labelTitle = new Label();
+            listBoxMessages = new ListBox();
+            textBoxInput = new TextBox();
             SuspendLayout();
+
             // 
-            // button1
+            // buttonSend
             // 
-            button1.Location = new Point(623, 357);
-            button1.Name = "button1";
-            button1.Size = new Size(87, 42);
-            button1.TabIndex = 0;
-            button1.Text = "전송";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonSend.Location = new Point(623, 357);
+            buttonSend.Name = "buttonSend";
+            buttonSend.Size = new Size(87, 42);
+            buttonSend.TabIndex = 0;
+            buttonSend.Text = "전송";
+            buttonSend.UseVisualStyleBackColor = true;
+            buttonSend.Click += buttonSend_Click;
+
             // 
-            // label1
+            // labelTitle
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ButtonFace;
-            label1.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.ForeColor = Color.Blue;
-            label1.Location = new Point(88, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 30);
-            label1.TabIndex = 1;
-            label1.Text = "Echo Messenger";
+            labelTitle.AutoSize = true;
+            labelTitle.Location = new Point(88, 21);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(110, 15);
+            labelTitle.TabIndex = 1;
+            labelTitle.Text = "Echo Messenger";
+
             // 
-            // listBox1
+            // listBoxMessages
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(88, 59);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(622, 274);
-            listBox1.TabIndex = 2;
+            listBoxMessages.FormattingEnabled = true;
+            listBoxMessages.ItemHeight = 15;
+            listBoxMessages.Location = new Point(88, 59);
+            listBoxMessages.Name = "listBoxMessages";
+            listBoxMessages.Size = new Size(622, 274);
+            listBoxMessages.TabIndex = 2;
+
             // 
-            // textBox1
+            // textBoxInput
             // 
-            textBox1.Location = new Point(88, 368);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(502, 23);
-            textBox1.TabIndex = 3;
-            textBox1.KeyDown += textBox1_KeyDown;
+            textBoxInput.Location = new Point(88, 368);
+            textBoxInput.Name = "textBoxInput";
+            textBoxInput.Size = new Size(502, 23);
+            textBoxInput.TabIndex = 3;
+            textBoxInput.KeyDown += textBoxInput_KeyDown;
+
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
-            Controls.Add(listBox1);
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(textBoxInput);
+            Controls.Add(listBoxMessages);
+            Controls.Add(labelTitle);
+            Controls.Add(buttonSend);
             Name = "Form1";
-            Text = "Form1";
+            Text = "EchoMessenger";
             ResumeLayout(false);
             PerformLayout();
         }
