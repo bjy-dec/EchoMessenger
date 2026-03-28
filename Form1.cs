@@ -35,8 +35,9 @@ namespace EchoMessenger
             if (string.IsNullOrEmpty(message))
                 return;
 
-            // 1️⃣ ListBox에 메시지 추가
-            listBoxMessages.Items.Add(message);
+            // 1️⃣ ListBox에 현재시간을 결합한 메시지 추가
+            string timedMessage = $"[{DateTime.Now:HH:mm:ss}] {message}";
+            listBoxMessages.Items.Add(timedMessage);
 
             // 2️⃣ 입력창 초기화
             textBoxInput.Clear();
@@ -46,6 +47,16 @@ namespace EchoMessenger
 
             // ListBox 자동 스크롤
             listBoxMessages.TopIndex = listBoxMessages.Items.Count - 1;
+            // 메시지 개수 갱신
+            if (lblCount != null)
+                lblCount.Text = $"현재 대화: {listBoxMessages.Items.Count}개";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 초기 메시지 개수 표시
+            if (lblCount != null)
+                lblCount.Text = $"현재 대화: {listBoxMessages.Items.Count}개";
         }
     }
 }

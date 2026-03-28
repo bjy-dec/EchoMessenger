@@ -6,6 +6,7 @@
 
         private Button buttonSend;
         private Label labelTitle;
+        private Label lblCount;
         private ListBox listBoxMessages;
         private TextBox textBoxInput;
 
@@ -22,8 +23,8 @@
             labelTitle = new Label();
             listBoxMessages = new ListBox();
             textBoxInput = new TextBox();
+            lblCount = new Label();
             SuspendLayout();
-
             // 
             // buttonSend
             // 
@@ -34,27 +35,23 @@
             buttonSend.Text = "전송";
             buttonSend.UseVisualStyleBackColor = true;
             buttonSend.Click += buttonSend_Click;
-
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
             labelTitle.Location = new Point(88, 21);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(110, 15);
+            labelTitle.Size = new Size(94, 15);
             labelTitle.TabIndex = 1;
             labelTitle.Text = "Echo Messenger";
-
             // 
             // listBoxMessages
             // 
             listBoxMessages.FormattingEnabled = true;
-            listBoxMessages.ItemHeight = 15;
             listBoxMessages.Location = new Point(88, 59);
             listBoxMessages.Name = "listBoxMessages";
             listBoxMessages.Size = new Size(622, 274);
             listBoxMessages.TabIndex = 2;
-
             // 
             // textBoxInput
             // 
@@ -63,21 +60,32 @@
             textBoxInput.Size = new Size(502, 23);
             textBoxInput.TabIndex = 3;
             textBoxInput.KeyDown += textBoxInput_KeyDown;
-
+            // 
+            // lblCount
+            // 
+            lblCount.AutoSize = true;
+            lblCount.Location = new Point(628, 411);
+            lblCount.Name = "lblCount";
+            lblCount.Size = new Size(39, 15);
+            lblCount.TabIndex = 4;
+            lblCount.Text = "label1";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblCount);
             Controls.Add(textBoxInput);
             Controls.Add(listBoxMessages);
             Controls.Add(labelTitle);
             Controls.Add(buttonSend);
             Name = "Form1";
             Text = "EchoMessenger";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
+
     }
 }
